@@ -3,6 +3,9 @@ import {Schibsted_Grotesk, Martian_Mono, Figtree} from "next/font/google";
 import "./globals.css";
 import LightRays from "@/components/LightRays";
 import Navbar from "@/components/Navbar";
+import { PostHogProvider } from "@/components/PostHogProvider";
+import { PostHogPageView } from "@/components/PostHogPageView";
+import { Suspense } from "react";
 
 const figtree = Figtree({subsets: ['latin'], variable: '--font-sans'});
 
@@ -30,6 +33,8 @@ export default function RootLayout({
         <html
             lang="en">
         <body className={`${schibstedGrotesk.variable} ${martianMono.variable} min-h-screen antialiased`}>
+        <PostHogProvider>
+        <Suspense fallback={null}><PostHogPageView /></Suspense>
         <Navbar />
         <div className="absolute inset-0 top-0 z-[-1] min-h-screen">
         <LightRays
@@ -52,6 +57,7 @@ export default function RootLayout({
         </main>
 
 
+        </PostHogProvider>
         </body>
         </html>
     );

@@ -13,7 +13,7 @@ const Page = () => {
             <div id="events" className="mt-20 space-y-10">
                 <h3>Featured Events</h3>
 
-                <ul className="events list-none">
+                <ul className="events">
                     {events.map((event) => (
                         <li key={event.title} >
                             <EventCard {...event}/>
