@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git config:*)",
+      "Read(//c/Users/Administrator/Documents/WindowsPowerShell/**)",
+      "Read(//c/Users/Administrator/Documents/PowerShell/**)"
+    ]
+  }
+}
